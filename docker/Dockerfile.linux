@@ -1,0 +1,10 @@
+FROM debian:bullseye-slim
+
+RUN apt update && apt upgrade -y
+RUN apt install -y \
+    texlive-full
+
+RUN mkdir /document
+WORKDIR /document
+
+CMD ["./compile.sh"]
